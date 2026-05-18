@@ -277,12 +277,12 @@ body::before {
 
 /* Hero artwork placeholder */
 /* HERO ARTWORK PLACEHOLDER — replace background-image with Ava's piece */
-..hero__art {
+.hero__art {
   position: relative;
   background-color: var(--deep-purple);
   background-image: url('images/hero.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: top right;
   aspect-ratio: 4 / 5;
   min-height: 420px;
   border: 1px solid rgba(46,18,80,0.6);
