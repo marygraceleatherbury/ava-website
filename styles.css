@@ -277,18 +277,20 @@ body::before {
 
 /* Hero artwork placeholder */
 /* HERO ARTWORK PLACEHOLDER — replace background-image with Ava's piece */
-.hero__art {
+..hero__art {
   position: relative;
   background-color: var(--deep-purple);
-  background-image:
-    radial-gradient(ellipse at 30% 20%, rgba(124,63,160,0.35), transparent 60%),
-    radial-gradient(ellipse at 70% 80%, rgba(204,32,32,0.18), transparent 65%);
+  background-image: url('images/hero.jpg');
+  background-size: cover;
+  background-position: center;
   aspect-ratio: 4 / 5;
   min-height: 420px;
   border: 1px solid rgba(46,18,80,0.6);
   overflow: hidden;
-  background-size: cover;
-  background-position: center top;
+}
+
+.hero__art::after {
+  display: none;
 }
 .hero__art::after {
   content: 'Hero artwork';
