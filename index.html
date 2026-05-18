@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ava Dawson — Illustrator & Visual Artist. Character-driven worlds rendered in shadow, colour, and quiet drama. Commissions, prints, and thumbnails." />
+  <title>Ava Dawson — Illustrator & Visual Artist</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+       ============================================================ -->
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="#top" class="nav__logo" aria-label="Ava Dawson — home">A · D</a>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav__links" id="navLinks">
+        <a href="#work">Work</a>
+        <a href="#commissions">Commissions</a>
+        <a href="#prints">Prints</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============================================================
+         HERO
+         ============================================================ -->
+    <section class="hero">
+      <!-- Corner bracket accents -->
+      <span class="bracket bracket--tl" aria-hidden="true"></span>
+      <span class="bracket bracket--br" aria-hidden="true"></span>
+
+      <div class="hero__grid">
+        <div class="hero__text">
+          <p class="eyebrow">Illustrator &amp; Visual Artist</p>
+
+          <h1 class="hero__name">
+            <span class="hero__first">Ava</span>
+            <span class="hero__last">DAWSON</span>
+          </h1>
+
+          <span class="hero__divider" aria-hidden="true"></span>
+
+          <p class="hero__tagline">
+            Character-driven worlds, rendered in shadow, colour, and quiet drama.
+          </p>
+
+          <p class="hero__subtitle">Digital · Traditional · Animation</p>
+
+          <ul class="tags" aria-label="At a glance">
+            <li class="tag tag--red">Commissions open</li>
+            <li class="tag tag--teal">Prints $30</li>
+            <li class="tag tag--purple">Thumbnails from $40</li>
+          </ul>
+
+          <div class="hero__buttons">
+            <a href="#commissions" class="btn btn--filled">Order a commission</a>
+            <a href="#prints" class="btn btn--ghost">Browse prints</a>
+          </div>
+        </div>
+
+        <!-- HERO ARTWORK: replace background-image with Ava's signature piece -->
+        <div class="hero__art" aria-label="Featured artwork"></div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         WORK / GALLERY  (CMS-editable — see /admin)
+         ============================================================ -->
+    <section class="section" id="work">
+      <header class="section__head">
+        <h2 class="section__title">Work</h2>
+        <p class="section__sub">Selected illustrations and personal pieces.</p>
+      </header>
+
+      <div class="grid grid--cards">
+
+        <!-- GALLERY CARD 1 — swap image src -->
+        <article class="card">
+          <div class="card__media" aria-label="Artwork 1"></div>
+          <div class="card__body">
+            <h3 class="card__title">Untitled I</h3>
+            <p class="card__meta">Digital illustration</p>
+          </div>
+        </article>
+
+        <!-- GALLERY CARD 2 — swap image src -->
+        <article class="card">
+          <div class="card__media" aria-label="Artwork 2"></div>
+          <div class="card__body">
+            <h3 class="card__title">Untitled II</h3>
+            <p class="card__meta">Mixed media</p>
+          </div>
+        </article>
+
+        <!-- GALLERY CARD 3 — swap image src -->
+        <article class="card">
+          <div class="card__media" aria-label="Artwork 3"></div>
+          <div class="card__body">
+            <h3 class="card__title">Untitled III</h3>
+            <p class="card__meta">Traditional · ink</p>
+          </div>
+        </article>
+
+        <!-- GALLERY CARD 4 — swap image src -->
+        <article class="card">
+          <div class="card__media" aria-label="Artwork 4"></div>
+          <div class="card__body">
+            <h3 class="card__title">Untitled IV</h3>
+            <p class="card__meta">Animation still</p>
+          </div>
+        </article>
+
+        <!-- GALLERY CARD 5 — swap image src -->
+        <article class="card">
+          <div class="card__media" aria-label="Artwork 5"></div>
+          <div class="card__body">
+            <h3 class="card__title">Untitled V</h3>
+            <p class="card__meta">Digital illustration</p>
+          </div>
+        </article>
+
+        <!-- GALLERY CARD 6 — swap image src -->
+        <article class="card">
+          <div class="card__media" aria-label="Artwork 6"></div>
+          <div class="card__body">
+            <h3 class="card__title">Untitled VI</h3>
+            <p class="card__meta">Character study</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         COMMISSIONS
+         ============================================================ -->
+    <section class="section" id="commissions">
+      <header class="section__head">
+        <h2 class="section__title">Commissions</h2>
+        <p class="section__sub">
+          Every piece is created by request. Reach out to discuss your vision
+          and I'll get back to you with availability and details.
+        </p>
+      </header>
+
+      <div class="services">
+        <article class="service">
+          <h3 class="service__title">Thumbnail Illustration</h3>
+          <p class="service__price">$40 without background / $50 with background</p>
+          <p class="service__body">
+            Custom illustration sized and optimized for YouTube thumbnails.
+          </p>
+        </article>
+
+        <article class="service">
+          <h3 class="service__title">Custom Commission</h3>
+          <p class="service__price">By request</p>
+          <p class="service__body">
+            Character work, scenes, and original pieces. Get in touch to
+            discuss scope and pricing.
+          </p>
+        </article>
+      </div>
+
+      <div class="services__cta">
+        <a href="#contact" class="btn btn--filled btn--lg">Get in touch</a>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PRINTS  (CMS-editable — see /admin)
+         ============================================================ -->
+    <section class="section" id="prints">
+      <header class="section__head">
+        <h2 class="section__title">Prints</h2>
+        <p class="section__sub section__sub--italic">
+          Original artwork available as high-quality prints.
+        </p>
+        <span class="price-badge">$30 per print</span>
+      </header>
+
+      <div class="grid grid--cards">
+
+        <!-- PRINT 1 — swap image src -->
+        <article class="card">
+          <div class="card__media" aria-label="Print 1"></div>
+          <div class="card__body">
+            <h3 class="card__title">Print No. 01</h3>
+            <button class="btn btn--ghost btn--sm" type="button">Add to cart</button>
+          </div>
+        </article>
+
+        <!-- PRINT 2 — swap image src -->
+        <article class="card">
+          <div class="card__media" aria-label="Print 2"></div>
+          <div class="card__body">
+            <h3 class="card__title">Print No. 02</h3>
+            <button class="btn btn--ghost btn--sm" type="button">Add to cart</button>
+          </div>
+        </article>
+
+        <!-- PRINT 3 — swap image src -->
+        <article class="card">
+          <div class="card__media" aria-label="Print 3"></div>
+          <div class="card__body">
+            <h3 class="card__title">Print No. 03</h3>
+            <button class="btn btn--ghost btn--sm" type="button">Add to cart</button>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="prints__note">
+        To purchase, reach out via the contact form below.
+      </p>
+    </section>
+
+    <!-- ============================================================
+         ABOUT
+         ============================================================ -->
+    <section class="section about" id="about">
+      <div class="about__grid">
+        <div class="about__initial" aria-hidden="true">A</div>
+
+        <div class="about__text">
+          <h2 class="section__title">About</h2>
+
+          <!-- BIO PLACEHOLDER — Ava, replace this paragraph with your own bio -->
+          <p class="about__body">
+            Ava Dawson is an illustrator and visual artist working at the
+            intersection of digital, traditional, and animated media. Her work
+            explores character, mood, and the quiet space between drama and
+            stillness — drawn to shadow, saturated colour, and stories that
+            unfold one frame at a time.
+          </p>
+
+          <ul class="about__links">
+            <li>
+              <a href="https://instagram.com/avadrawson" target="_blank" rel="noopener">
+                Instagram · @avadrawson
+              </a>
+            </li>
+            <li>
+              <a href="#" target="_blank" rel="noopener">
+                LinkedIn · Ava Dawson
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT
+         ============================================================ -->
+    <section class="contact" id="contact">
+      <div class="contact__inner">
+        <h2 class="contact__title">Get in touch</h2>
+        <p class="contact__sub">
+          For commissions, prints, thumbnails, or just to say hello.
+        </p>
+
+        <!-- Netlify form: data-netlify enables form detection on deploy -->
+        <form
+          name="contact"
+          method="POST"
+          action="/"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          class="form"
+        >
+          <input type="hidden" name="form-name" value="contact" />
+          <p class="form__hp">
+            <label>Don't fill this out: <input name="bot-field" /></label>
+          </p>
+
+          <div class="form__row">
+            <label class="form__field">
+              <span class="form__label">Name</span>
+              <input type="text" name="name" required />
+            </label>
+
+            <label class="form__field">
+              <span class="form__label">Email</span>
+              <input type="email" name="email" required />
+            </label>
+          </div>
+
+          <label class="form__field">
+            <span class="form__label">Subject</span>
+            <select name="subject" required>
+              <option value="">Select one</option>
+              <option>Commission Inquiry</option>
+              <option>Print Purchase</option>
+              <option>Thumbnail Request</option>
+              <option>Other</option>
+            </select>
+          </label>
+
+          <label class="form__field">
+            <span class="form__label">Message</span>
+            <textarea name="message" rows="6" required></textarea>
+          </label>
+
+          <button type="submit" class="btn btn--filled btn--lg">Send</button>
+        </form>
+
+        <ul class="socials" aria-label="Social links">
+          <li>
+            <a href="https://instagram.com/avadrawson" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                <line x1="7" y1="10" x2="7" y2="17" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="7" cy="7" r="1" fill="currentColor"/>
+                <path d="M11 17v-7M11 13c0-2 1.5-3 3-3s3 1 3 3v4" fill="none" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <p class="footer__text">© 2025 Ava Dawson</p>
+      <ul class="footer__dots" aria-hidden="true">
+        <li style="background:#cc2020"></li>
+        <li style="background:#1a8a80"></li>
+        <li style="background:#c8a030"></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       Mobile nav toggle
+       ============================================================ -->
+  <script>
+    (function () {
+      var btn = document.getElementById('navToggle');
+      var links = document.getElementById('navLinks');
+      if (!btn || !links) return;
+
+      btn.addEventListener('click', function () {
+        var open = links.classList.toggle('is-open');
+        btn.classList.toggle('is-open', open);
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      });
+
+      // Close menu when a link is tapped (mobile)
+      links.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          links.classList.remove('is-open');
+          btn.classList.remove('is-open');
+          btn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

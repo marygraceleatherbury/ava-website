@@ -1,0 +1,56 @@
+# =============================================================
+# Decap / Netlify CMS — Configuration
+# Lets Ava log into /admin and manage Gallery + Prints herself.
+# =============================================================
+
+backend:
+  name: git-gateway
+  branch: main            # change to "master" if your repo uses master
+
+# Where uploaded images are stored in the repo
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+# Show a "Save as Draft → Publish" workflow in the CMS UI
+publish_mode: editorial_workflow
+
+site_url: https://avadawson.com
+display_url: https://avadawson.com
+logo_url: https://avadawson.com/favicon.png
+
+collections:
+
+  # -----------------------------------------------------------
+  # GALLERY — the "Work" section on the homepage
+  # -----------------------------------------------------------
+  - name: "gallery"
+    label: "Gallery"
+    label_singular: "Gallery piece"
+    folder: "content/gallery"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    summary: "{{title}} — {{medium}}"
+    sortable_fields: ["title", "order"]
+    fields:
+      - { label: "Image",  name: "image",  widget: "image" }
+      - { label: "Title",  name: "title",  widget: "string" }
+      - { label: "Medium", name: "medium", widget: "string", required: false, hint: "e.g. Digital illustration, Ink on paper" }
+      - { label: "Display order", name: "order", widget: "number", required: false, default: 1, value_type: "int", min: 1 }
+
+  # -----------------------------------------------------------
+  # PRINTS — the "Prints" section on the homepage
+  # -----------------------------------------------------------
+  - name: "prints"
+    label: "Prints"
+    label_singular: "Print"
+    folder: "content/prints"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    sortable_fields: ["title", "order"]
+    fields:
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Display order", name: "order", widget: "number", required: false, default: 1, value_type: "int", min: 1 }
