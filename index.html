@@ -75,20 +75,41 @@
     </section>
 
     <!-- ============================================================
-         WORK / GALLERY  (tabbed)
-         ============================================================ -->
-    <section class="section" id="work">
-      <header class="section__head">
-        <h2 class="section__title">Work</h2>
-        <p class="section__sub">Selected illustrations and personal pieces.</p>
-      </header>
+     WORK / GALLERY  (tabbed)
+     ============================================================ -->
+<section class="section" id="work">
+  <header class="section__head">
+    <h2 class="section__title">Work</h2>
+    <p class="section__sub">Selected illustrations and personal pieces.</p>
+  </header>
 
-      <div class="tabs" role="tablist" aria-label="Gallery categories">
-        <button class="tab is-active" role="tab" aria-selected="true"  data-tab="illustration">Illustration</button>
-        <button class="tab"           role="tab" aria-selected="false" data-tab="visdev">Visual Development</button>
-        <button class="tab"           role="tab" aria-selected="false" data-tab="sketchbook">Sketchbook</button>
-        <button class="tab"           role="tab" aria-selected="false" data-tab="professional">Professional</button>
-      </div>
+  <div class="tabs" role="tablist" aria-label="Gallery categories">
+    <button class="tab is-active" role="tab" aria-selected="true"  data-tab="illustration">Illustration</button>
+    <button class="tab"           role="tab" aria-selected="false" data-tab="visualDevelopment">Visual Development</button>
+    <button class="tab"           role="tab" aria-selected="false" data-tab="sketchbook">Sketchbook</button>
+    <button class="tab"           role="tab" aria-selected="false" data-tab="professional">Professional</button>
+  </div>
+
+  <div class="tab-panel is-active" id="panel-illustration"       role="tabpanel"><div class="grid grid--cards"></div></div>
+  <div class="tab-panel"           id="panel-visualDevelopment"  role="tabpanel"><div class="grid grid--cards"></div></div>
+  <div class="tab-panel"           id="panel-sketchbook"         role="tabpanel"><div class="grid grid--cards"></div></div>
+  <div class="tab-panel"           id="panel-professional"       role="tabpanel"><div class="grid grid--cards"></div></div>
+</section>
+
+<!-- ============================================================
+     LIGHTBOX
+     ============================================================ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Artwork viewer">
+  <button class="lightbox__close" id="lightboxClose" aria-label="Close">&times;</button>
+  <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Previous image">&#8592;</button>
+  <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Next image">&#8594;</button>
+
+  <div class="lightbox__stage" id="lightboxStage">
+    <img class="lightbox__img" id="lightboxImg" alt="" />
+    <h3 class="lightbox__title" id="lightboxTitle"></h3>
+    <p class="lightbox__meta"  id="lightboxMeta"></p>
+  </div>
+</div>
 
       <!-- ILLUSTRATION -->
       <div class="tab-panel is-active" id="panel-illustration" role="tabpanel">
@@ -388,30 +409,166 @@
   </script>
 
   <!-- ============================================================
-       Gallery tabs
-       ============================================================ -->
-  <script>
-    (function () {
-      var tabs = document.querySelectorAll('#work .tab');
-      var panels = document.querySelectorAll('#work .tab-panel');
-      if (!tabs.length) return;
+     Gallery: data, render, tabs, lightbox
+     ============================================================ -->
+<script>
+  (function () {
+    const artwork = {
+      illustration: [
+        { file: "art1.jpg",  title: "Mage in Meadow",                     medium: "Digital illustration" },
+        { file: "art2.jpg",  title: "Figure by Magical Tree",             medium: "Digital illustration" },
+        { file: "art3.jpg",  title: "Café de Flore",                      medium: "Digital illustration" },
+        { file: "art4.jpg",  title: "Sunset Portrait",                    medium: "Watercolor" },
+        { file: "art5.jpg",  title: "Small Figure Before Glowing Tree",   medium: "Digital illustration" },
+        { file: "art6.jpg",  title: "Couple Spinning Under Tree",         medium: "Digital illustration" },
+        { file: "art7.jpg",  title: "Coronation",                         medium: "Digital illustration" },
+        { file: "art8.jpg",  title: "Open Mind / Floral Skull",           medium: "Mixed media" },
+        { file: "art9.jpg",  title: "Fortune Teller",                     medium: "Digital illustration" },
+        { file: "art10.jpg", title: "Watercolor Profile Portrait",        medium: "Watercolor" },
+        { file: "art11.jpg", title: "Woman with Blue Head Wrap",          medium: "Digital illustration" },
+        { file: "art12.jpg", title: "NYFW Green Heels",                   medium: "Watercolor" },
+        { file: "art13.jpg", title: "Fender Guitar and Amplifier",        medium: "Watercolor" },
+        { file: "art14.jpg", title: "Two Figures by Candlelight",         medium: "Watercolor" }
+      ],
+      visualDevelopment: [
+        { file: "art15.jpg", title: "Hometown Heroes — Logo",                medium: "Digital" },
+        { file: "art16.jpg", title: "Shimmer: Bedroom Sketch Sheet 1",       medium: "Digital sketch" },
+        { file: "art17.jpg", title: "Shimmer: Bedroom Sketch Sheet 2",       medium: "Digital sketch" },
+        { file: "art18.jpg", title: "Shimmer: Bedroom Sketch Sheet 3",       medium: "Digital sketch" },
+        { file: "art19.jpg", title: "Shimmer: Bedroom Final Layout",         medium: "Digital illustration" },
+        { file: "art20.jpg", title: "Shimmer: Bedroom Character In Scene",   medium: "Digital illustration" },
+        { file: "art21.jpg", title: "Shimmer's Motorcycle",                  medium: "Digital illustration" },
+        { file: "art22.jpg", title: "Everwarm Coast — Floating Market",      medium: "Digital illustration" }
+      ],
+      sketchbook: [
+        { file: "art23.jpg", title: "The Islanders — Colorful Sketches",     medium: "Marker/pen" },
+        { file: "art24.jpg", title: "The Islanders — Underlying Layer",      medium: "Pencil/pen" },
+        { file: "art25.jpg", title: "The Chieftain — Character Concepts",    medium: "Pencil/colored pencil" },
+        { file: "art26.jpg", title: "Character Sketches on Boarding Passes", medium: "Ink and marker" },
+        { file: "art27.jpg", title: "Dragon and Princess Sketches",          medium: "Ink/pencil" },
+        { file: "art28.jpg", title: "DYNA-MIGHT! Action Sketches",           medium: "Ink" },
+        { file: "art29.jpg", title: "Artist Logo Studies",                   medium: "Ink" }
+      ],
+      professional: [
+        { file: "art30.jpg", title: "Provence: Rising",                  medium: "Digital illustration / Game concept art" },
+        { file: "art31.jpg", title: "Nothing Wrong With Wet Socks",      medium: "Graphic design / Lettering" }
+      ]
+    };
 
-      tabs.forEach(function (tab) {
-        tab.addEventListener('click', function () {
-          var target = tab.getAttribute('data-tab');
+    // ---- Render cards into each panel ----
+    function renderPanel(key) {
+      const panel = document.querySelector('#panel-' + key + ' .grid--cards');
+      if (!panel) return;
+      const items = artwork[key] || [];
+      panel.innerHTML = items.map(function (a, i) {
+        return ''
+          + '<article class="card" data-tab="' + key + '" data-index="' + i + '" tabindex="0" aria-label="' + a.title + '">'
+          +   '<div class="card__media" style="background-image:url(\'images/' + a.file + '\')"></div>'
+          +   '<div class="card__body">'
+          +     '<h3 class="card__title">' + a.title + '</h3>'
+          +     '<p class="card__meta">'  + a.medium + '</p>'
+          +   '</div>'
+          + '</article>';
+      }).join('');
+    }
+    Object.keys(artwork).forEach(renderPanel);
 
-          tabs.forEach(function (t) {
-            var active = t === tab;
-            t.classList.toggle('is-active', active);
-            t.setAttribute('aria-selected', active ? 'true' : 'false');
-          });
-
-          panels.forEach(function (p) {
-            p.classList.toggle('is-active', p.id === 'panel-' + target);
-          });
+    // ---- Tab switching ----
+    const tabs   = document.querySelectorAll('#work .tab');
+    const panels = document.querySelectorAll('#work .tab-panel');
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        const target = tab.getAttribute('data-tab');
+        tabs.forEach(function (t) {
+          const active = t === tab;
+          t.classList.toggle('is-active', active);
+          t.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+        panels.forEach(function (p) {
+          p.classList.toggle('is-active', p.id === 'panel-' + target);
         });
       });
-    })();
-  </script>
-</body>
-</html>
+    });
+
+    // ---- Lightbox ----
+    const lb       = document.getElementById('lightbox');
+    const lbImg    = document.getElementById('lightboxImg');
+    const lbTitle  = document.getElementById('lightboxTitle');
+    const lbMeta   = document.getElementById('lightboxMeta');
+    const lbClose  = document.getElementById('lightboxClose');
+    const lbPrev   = document.getElementById('lightboxPrev');
+    const lbNext   = document.getElementById('lightboxNext');
+    const lbStage  = document.getElementById('lightboxStage');
+
+    let currentTab = null;
+    let currentIdx = 0;
+
+    function showImage() {
+      const items = artwork[currentTab] || [];
+      if (!items.length) return;
+      const a = items[currentIdx];
+      lbImg.src = 'images/' + a.file;
+      lbImg.alt = a.title;
+      lbTitle.textContent = a.title;
+      lbMeta.textContent  = a.medium;
+    }
+
+    function openLightbox(tabKey, idx) {
+      currentTab = tabKey;
+      currentIdx = idx;
+      showImage();
+      lb.classList.add('is-open');
+      lb.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lb.classList.remove('is-open');
+      lb.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    function step(dir) {
+      const items = artwork[currentTab] || [];
+      if (!items.length) return;
+      currentIdx = (currentIdx + dir + items.length) % items.length;
+      showImage();
+    }
+
+    // Card click — event delegation so it covers all rendered cards
+    document.querySelectorAll('#work .tab-panel').forEach(function (panel) {
+      panel.addEventListener('click', function (e) {
+        const card = e.target.closest('.card');
+        if (!card) return;
+        openLightbox(card.getAttribute('data-tab'), parseInt(card.getAttribute('data-index'), 10));
+      });
+      // Keyboard: Enter/Space on focused card
+      panel.addEventListener('keydown', function (e) {
+        if (e.key !== 'Enter' && e.key !== ' ') return;
+        const card = e.target.closest('.card');
+        if (!card) return;
+        e.preventDefault();
+        openLightbox(card.getAttribute('data-tab'), parseInt(card.getAttribute('data-index'), 10));
+      });
+    });
+
+    lbClose.addEventListener('click', closeLightbox);
+    lbPrev .addEventListener('click', function (e) { e.stopPropagation(); step(-1); });
+    lbNext .addEventListener('click', function (e) { e.stopPropagation(); step( 1); });
+
+    // Click outside the image/text area closes
+    lb.addEventListener('click', function (e) {
+      if (!lbStage.contains(e.target)) closeLightbox();
+    });
+
+    // Keyboard
+    document.addEventListener('keydown', function (e) {
+      if (!lb.classList.contains('is-open')) return;
+      if (e.key === 'Escape')      closeLightbox();
+      else if (e.key === 'ArrowLeft')  step(-1);
+      else if (e.key === 'ArrowRight') step( 1);
+    });
+  })();
+</script>
+
+  
