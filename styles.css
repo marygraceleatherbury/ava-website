@@ -796,21 +796,25 @@ body::before {
   .tab { flex: 0 0 auto; }
 }
 /* ============================================================
-   GALLERY — small refinements
+   GALLERY — card click affordance + subtle red top-border on hover
    ============================================================ */
-.card { position: relative; }
-.card::before {
+#work .card { cursor: zoom-in; position: relative; }
+#work .card::before {
   content: '';
   position: absolute;
   inset: 0 0 auto 0;
   height: 1px;
   background: var(--red);
   opacity: 0;
-  transition: opacity .25s ease;
+  transition: opacity 0.25s ease;
   pointer-events: none;
+  z-index: 1;
 }
-.card:hover::before { opacity: 1; }
-.card { cursor: zoom-in; }
+#work .card:hover::before { opacity: 1; }
+#work .card:focus-visible {
+  outline: 1px solid var(--red);
+  outline-offset: 2px;
+}
 
 /* ============================================================
    LIGHTBOX
@@ -824,7 +828,7 @@ body::before {
   justify-content: center;
   background: rgba(13, 8, 18, 0.95);
   padding: clamp(2rem, 5vw, 4rem);
-  animation: lb-fade .2s ease;
+  animation: lb-fade 0.2s ease;
 }
 .lightbox.is-open { display: flex; }
 
@@ -878,11 +882,10 @@ body::before {
   background: transparent;
   color: var(--text);
   border: 1px solid transparent;
-  transition: color .2s ease, border-color .2s ease, background .2s ease;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--f-display);
   line-height: 1;
 }
 
@@ -892,6 +895,7 @@ body::before {
   width: 48px;
   height: 48px;
   font-size: 2rem;
+  font-family: var(--f-display);
 }
 
 .lightbox__nav {
@@ -900,6 +904,7 @@ body::before {
   width: 56px;
   height: 56px;
   font-size: 1.75rem;
+  font-family: var(--f-mono);
 }
 .lightbox__nav--prev { left:  clamp(0.75rem, 2vw, 1.5rem); }
 .lightbox__nav--next { right: clamp(0.75rem, 2vw, 1.5rem); }
@@ -909,8 +914,15 @@ body::before {
   color: var(--red);
   border-color: var(--red);
 }
+.lightbox__close:focus-visible,
+.lightbox__nav:focus-visible {
+  outline: none;
+  color: var(--red);
+  border-color: var(--red);
+}
 
 @media (max-width: 600px) {
   .lightbox__nav { width: 44px; height: 44px; font-size: 1.4rem; }
   .lightbox__close { width: 40px; height: 40px; font-size: 1.6rem; }
+  .lightbox { padding: 1rem; }
 }
