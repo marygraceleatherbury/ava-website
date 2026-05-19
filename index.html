@@ -75,7 +75,7 @@
     </section>
 
     <!-- ============================================================
-         WORK / GALLERY  (CMS-editable — see /admin)
+         WORK / GALLERY  (tabbed)
          ============================================================ -->
     <section class="section" id="work">
       <header class="section__head">
@@ -83,62 +83,66 @@
         <p class="section__sub">Selected illustrations and personal pieces.</p>
       </header>
 
-      <div class="grid grid--cards">
+      <div class="tabs" role="tablist" aria-label="Gallery categories">
+        <button class="tab is-active" role="tab" aria-selected="true"  data-tab="illustration">Illustration</button>
+        <button class="tab"           role="tab" aria-selected="false" data-tab="visdev">Visual Development</button>
+        <button class="tab"           role="tab" aria-selected="false" data-tab="sketchbook">Sketchbook</button>
+        <button class="tab"           role="tab" aria-selected="false" data-tab="professional">Professional</button>
+      </div>
 
-        <!-- GALLERY CARD 1 — swap image src -->
-        <article class="card">
-          <div class="card__media" aria-label="Artwork 1"></div>
-          <div class="card__body">
-            <h3 class="card__title">Untitled I</h3>
-            <p class="card__meta">Digital illustration</p>
-          </div>
-        </article>
+      <!-- ILLUSTRATION -->
+      <div class="tab-panel is-active" id="panel-illustration" role="tabpanel">
+        <div class="grid grid--cards">
+          <article class="card"><div class="card__media" style="background-image:url('images/art1.jpg')"></div><div class="card__body"><h3 class="card__title">Untitled I</h3><p class="card__meta">Illustration</p></div></article>
+          <article class="card"><div class="card__media" style="background-image:url('images/art2.jpg')"></div><div class="card__body"><h3 class="card__title">Untitled II</h3><p class="card__meta">Illustration</p></div></article>
+          <article class="card"><div class="card__media" style="background-image:url('images/art3.jpg')"></div><div class="card__body"><h3 class="card__title">Untitled III</h3><p class="card__meta">Illustration</p></div></article>
+          <article class="card"><div class="card__media" style="background-image:url('images/art4.jpg')"></div><div class="card__body"><h3 class="card__title">Untitled IV</h3><p class="card__meta">Illustration</p></div></article>
+          <article class="card"><div class="card__media" style="background-image:url('images/art5.jpg')"></div><div class="card__body"><h3 class="card__title">Untitled V</h3><p class="card__meta">Illustration</p></div></article>
+          <article class="card"><div class="card__media" style="background-image:url('images/art6.jpg')"></div><div class="card__body"><h3 class="card__title">Untitled VI</h3><p class="card__meta">Illustration</p></div></article>
+          <article class="card"><div class="card__media" style="background-image:url('images/art7.jpg')"></div><div class="card__body"><h3 class="card__title">Untitled VII</h3><p class="card__meta">Illustration</p></div></article>
+          <article class="card"><div class="card__media" style="background-image:url('images/art8.jpg')"></div><div class="card__body"><h3 class="card__title">Untitled VIII</h3><p class="card__meta">Illustration</p></div></article>
+          <article class="card"><div class="card__media" style="background-image:url('images/art9.jpg')"></div><div class="card__body"><h3 class="card__title">Untitled IX</h3><p class="card__meta">Illustration</p></div></article>
+          <article class="card"><div class="card__media" style="background-image:url('images/art10.jpg')"></div><div class="card__body"><h3 class="card__title">Untitled X</h3><p class="card__meta">Illustration</p></div></article>
+          <article class="card"><div class="card__media" style="background-image:url('images/art11.jpg')"></div><div class="card__body"><h3 class="card__title">Untitled XI</h3><p class="card__meta">Illustration</p></div></article>
+          <article class="card"><div class="card__media" style="background-image:url('images/art12.jpg')"></div><div class="card__body"><h3 class="card__title">Untitled XII</h3><p class="card__meta">Illustration</p></div></article>
+          <article class="card"><div class="card__media" style="background-image:url('images/art13.jpg')"></div><div class="card__body"><h3 class="card__title">Untitled XIII</h3><p class="card__meta">Illustration</p></div></article>
+          <article class="card"><div class="card__media" style="background-image:url('images/art14.jpg')"></div><div class="card__body"><h3 class="card__title">Untitled XIV</h3><p class="card__meta">Illustration</p></div></article>
+        </div>
+      </div>
 
-        <!-- GALLERY CARD 2 — swap image src -->
-        <article class="card">
-          <div class="card__media" aria-label="Artwork 2"></div>
-          <div class="card__body">
-            <h3 class="card__title">Untitled II</h3>
-            <p class="card__meta">Mixed media</p>
-          </div>
-        </article>
+      <!-- VISUAL DEVELOPMENT -->
+      <div class="tab-panel" id="panel-visdev" role="tabpanel">
+        <div class="grid grid--cards">
+          <article class="card"><div class="card__media" style="background-image:url('images/art15.jpg')"></div><div class="card__body"><h3 class="card__title">Untitled XV</h3><p class="card__meta">Visual Development</p></div></article>
+          <article class="card"><div class="card__media" style="background-image:url('images/art16.jpg')"></div><div class="card__body"><h3 class="card__title">Untitled XVI</h3><p class="card__meta">Visual Development</p></div></article>
+          <article class="card"><div class="card__media" style="background-image:url('images/art17.jpg')"></div><div class="card__body"><h3 class="card__title">Untitled XVII</h3><p class="card__meta">Visual Development</p></div></article>
+          <article class="card"><div class="card__media" style="background-image:url('images/art18.jpg')"></div><div class="card__body"><h3 class="card__title">Untitled XVIII</h3><p class="card__meta">Visual Development</p></div></article>
+          <article class="card"><div class="card__media" style="background-image:url('images/art19.jpg')"></div><div class="card__body"><h3 class="card__title">Untitled XIX</h3><p class="card__meta">Visual Development</p></div></article>
+          <article class="card"><div class="card__media" style="background-image:url('images/art20.jpg')"></div><div class="card__body"><h3 class="card__title">Untitled XX</h3><p class="card__meta">Visual Development</p></div></article>
+          <article class="card"><div class="card__media" style="background-image:url('images/art21.jpg')"></div><div class="card__body"><h3 class="card__title">Untitled XXI</h3><p class="card__meta">Visual Development</p></div></article>
+          <article class="card"><div class="card__media" style="background-image:url('images/art22.jpg')"></div><div class="card__body"><h3 class="card__title">Untitled XXII</h3><p class="card__meta">Visual Development</p></div></article>
+        </div>
+      </div>
 
-        <!-- GALLERY CARD 3 — swap image src -->
-        <article class="card">
-          <div class="card__media" aria-label="Artwork 3"></div>
-          <div class="card__body">
-            <h3 class="card__title">Untitled III</h3>
-            <p class="card__meta">Traditional · ink</p>
-          </div>
-        </article>
+      <!-- SKETCHBOOK -->
+      <div class="tab-panel" id="panel-sketchbook" role="tabpanel">
+        <div class="grid grid--cards">
+          <article class="card"><div class="card__media" style="background-image:url('images/art23.jpg')"></div><div class="card__body"><h3 class="card__title">Untitled XXIII</h3><p class="card__meta">Sketchbook</p></div></article>
+          <article class="card"><div class="card__media" style="background-image:url('images/art24.jpg')"></div><div class="card__body"><h3 class="card__title">Untitled XXIV</h3><p class="card__meta">Sketchbook</p></div></article>
+          <article class="card"><div class="card__media" style="background-image:url('images/art25.jpg')"></div><div class="card__body"><h3 class="card__title">Untitled XXV</h3><p class="card__meta">Sketchbook</p></div></article>
+          <article class="card"><div class="card__media" style="background-image:url('images/art26.jpg')"></div><div class="card__body"><h3 class="card__title">Untitled XXVI</h3><p class="card__meta">Sketchbook</p></div></article>
+          <article class="card"><div class="card__media" style="background-image:url('images/art27.jpg')"></div><div class="card__body"><h3 class="card__title">Untitled XXVII</h3><p class="card__meta">Sketchbook</p></div></article>
+          <article class="card"><div class="card__media" style="background-image:url('images/art28.jpg')"></div><div class="card__body"><h3 class="card__title">Untitled XXVIII</h3><p class="card__meta">Sketchbook</p></div></article>
+          <article class="card"><div class="card__media" style="background-image:url('images/art29.jpg')"></div><div class="card__body"><h3 class="card__title">Untitled XXIX</h3><p class="card__meta">Sketchbook</p></div></article>
+        </div>
+      </div>
 
-        <!-- GALLERY CARD 4 — swap image src -->
-        <article class="card">
-          <div class="card__media" aria-label="Artwork 4"></div>
-          <div class="card__body">
-            <h3 class="card__title">Untitled IV</h3>
-            <p class="card__meta">Animation still</p>
-          </div>
-        </article>
-
-        <!-- GALLERY CARD 5 — swap image src -->
-        <article class="card">
-          <div class="card__media" aria-label="Artwork 5"></div>
-          <div class="card__body">
-            <h3 class="card__title">Untitled V</h3>
-            <p class="card__meta">Digital illustration</p>
-          </div>
-        </article>
-
-        <!-- GALLERY CARD 6 — swap image src -->
-        <article class="card">
-          <div class="card__media" aria-label="Artwork 6"></div>
-          <div class="card__body">
-            <h3 class="card__title">Untitled VI</h3>
-            <p class="card__meta">Character study</p>
-          </div>
-        </article>
-
+      <!-- PROFESSIONAL -->
+      <div class="tab-panel" id="panel-professional" role="tabpanel">
+        <div class="grid grid--cards">
+          <article class="card"><div class="card__media" style="background-image:url('images/art30.jpg')"></div><div class="card__body"><h3 class="card__title">Provence: Rising</h3><p class="card__meta">Game Cover Art</p></div></article>
+          <article class="card"><div class="card__media" style="background-image:url('images/art31.jpg')"></div><div class="card__body"><h3 class="card__title">Nothing Wrong With Wet Socks</h3><p class="card__meta">Poster Art</p></div></article>
+        </div>
       </div>
     </section>
 
@@ -378,6 +382,33 @@
           links.classList.remove('is-open');
           btn.classList.remove('is-open');
           btn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+  </script>
+
+  <!-- ============================================================
+       Gallery tabs
+       ============================================================ -->
+  <script>
+    (function () {
+      var tabs = document.querySelectorAll('#work .tab');
+      var panels = document.querySelectorAll('#work .tab-panel');
+      if (!tabs.length) return;
+
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          var target = tab.getAttribute('data-tab');
+
+          tabs.forEach(function (t) {
+            var active = t === tab;
+            t.classList.toggle('is-active', active);
+            t.setAttribute('aria-selected', active ? 'true' : 'false');
+          });
+
+          panels.forEach(function (p) {
+            p.classList.toggle('is-active', p.id === 'panel-' + target);
+          });
         });
       });
     })();
